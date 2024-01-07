@@ -15,7 +15,7 @@ const props = defineProps({
                     :href="link.url"
                     v-html="link.label"
                     class="px-3 py-2 text-xs rounded mr-2"
-                    :class="link.active ? 'bg-c-green-600 text-white' : 'bg-zinc-200 text-zinc-500'"
+                    :class="link.active ? 'bg-indigo-500 text-white' : 'bg-zinc-200 text-zinc-500'"
                     as="button"
                     :disabled="link.active"
                 ></Link>

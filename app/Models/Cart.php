@@ -9,24 +9,12 @@ class Cart extends Pivot
 {
     protected $table = 'carts';
 
-    protected $casts = [
-        'saved_for_later' => 'boolean'
-    ];
-
     /**
      * @param ?string $instance
      */
-    public static function getContent($instance = null)
+    public static function getContent()
     {
-        if ($instance && $instance === 'saved') {
-            return auth()->user()->cart()
-                ->where('saved_for_later', true)
-                ->get();
-        }
-
-        return auth()->user()->cart()
-            ->where('saved_for_later', false)
-            ->get();
+        return auth()->user()->cart()->get();
     }
 
     /**

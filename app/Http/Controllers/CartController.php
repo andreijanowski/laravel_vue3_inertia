@@ -10,12 +10,10 @@ class CartController extends Controller
     public function index()
     {
         $products = Cart::getContent();
-        $savedProducts = Cart::getContent('saved');
         $total = Cart::getCartTotal($products);
 
         return inertia('Cart', [
             'products' => $products,
-            'savedProducts' => $savedProducts,
             'total' => $total,
         ]);
     }
@@ -76,12 +74,8 @@ class CartController extends Controller
      */
     protected function increaseQty($productInCart)
     {
-        if ($productInCart->available_quantity > $productInCart->pivot->quantity) {
-            $productInCart->pivot->quantity = $productInCart->pivot->quantity + 1;
-            $productInCart->pivot->save();
-        } else {
-            return back()->with('error', 'The selected quantity is not available at the moment.');
-        }
+        $productInCart->pivot->quantity = $productInCart->pivot->quantity + 1;
+        $productInCart->pivot->save();
     }
 
     /**

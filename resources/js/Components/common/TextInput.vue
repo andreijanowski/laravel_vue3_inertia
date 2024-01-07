@@ -16,7 +16,7 @@ onMounted(() => {
 
 <template>
     <input
-        class="text-xs p-3 border-none bg-zinc-200 rounded-lg focus:ring-2 focus:ring-zinc-300 focus:ring-opacity-90 transition"
+        class="text-xs p-3 border-none bg-gray-100 rounded focus:ring-2 focus:border-gray-300 focus:ring-opacity-90 transition"
         :value="modelValue"
         @input="$emit('update:modelValue', $event.target.value)"
         ref="input">

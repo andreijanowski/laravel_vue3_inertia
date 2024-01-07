@@ -2,7 +2,6 @@
 
 namespace Database\Factories;
 
-use App\Models\Category;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
@@ -22,12 +21,10 @@ class ProductFactory extends Factory
         $slug = Str::slug($name);
 
         return [
-            'category_id' => Category::all()->random()->id,
             'name' => $name,
             'slug' => $slug,
             'description' => $this->faker->paragraph(3),
-            'price' => $this->faker->randomElement(['10.99', '20.10', '29.99', '10.00', '39.90']),
-            'available_quantity' => $this->faker->randomElement([1, 2, 3, 4, 5]),
+            'price' => $this->faker->randomElement(['10.99', '20.99', '30.99', '40.99', '99.99']),
         ];
     }
 }

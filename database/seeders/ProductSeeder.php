@@ -15,41 +15,37 @@ class ProductSeeder extends Seeder
      */
     public function run()
     {
-        $sneakers = Product::factory(3)->create(['category_id' => 1]);
-        $boots = Product::factory(2)->create(['category_id' => 2]);
-        $shorts = Product::factory(1)->create(['category_id' => 3]);
-        $jeans = Product::factory(4)->create(['category_id' => 4]);
-        $shirts = Product::factory(2)->create(['category_id' => 5]);
-        $hoodies = Product::factory(2)->create(['category_id' => 6]);
-        $sweatshirts = Product::factory(4)->create(['category_id' => 7]);
-        $hats = Product::factory(5)->create(['category_id' => 8]);
+        $laptops = Product::factory(5)->create();
+        $headphones = Product::factory(4)->create();
+        $phones = Product::factory(4)->create();
 
-        foreach ($shirts as $shirt) {
-            $shirt->images()->create(['url' => 'green-shirt.jpg']);
+        $bags = Product::factory(3)->create();
+        $shoes = Product::factory(3)->create();
+        $cups = Product::factory(2)->create();
+        $hats = Product::factory(2)->create();
+
+        foreach ($laptops as $laptop) {
+            $laptop->images()->create(['url' => 'laptop.png']);
         }
 
-        foreach ($sneakers as $sneaker) {
-            $sneaker->images()->create(['url' => 'sneaker.jpg']);
+        foreach ($headphones as $headphone) {
+            $headphone->images()->create(['url' => 'headphone.jpg']);
         }
 
-        foreach ($boots as $boot) {
-            $boot->images()->create(['url' => 'boot.jpg']);
+        foreach ($phones as $phone) {
+            $phone->images()->create(['url' => 'iphone.jpg']);
         }
 
-        foreach ($shorts as $short) {
-            $short->images()->create(['url' => 'short.jpg']);
+        foreach ($bags as $bag) {
+            $bag->images()->create(['url' => 'bag.jpg']);
         }
 
-        foreach ($jeans as $j) {
-            $j->images()->create(['url' => 'jeans.jpg']);
+        foreach ($shoes as $shoe) {
+            $shoe->images()->create(['url' => 'shoes.jpg']);
         }
 
-        foreach ($hoodies as $hoodie) {
-            $hoodie->images()->create(['url' => 'hoodie.jpg']);
-        }
-
-        foreach ($sweatshirts as $sweatshirt) {
-            $sweatshirt->images()->create(['url' => 'sweatshirt.jpg']);
+        foreach ($cups as $cup) {
+            $cup->images()->create(['url' => 'cup.jpg']);
         }
 
         foreach ($hats as $hat) {

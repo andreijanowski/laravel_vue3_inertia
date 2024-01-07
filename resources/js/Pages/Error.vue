@@ -1,14 +1,14 @@
 <script setup>
-import ShopLayout from '@/Layouts/ShopLayout.vue';
+import MainLayout from '@/Layouts/MainLayout.vue';
 
 const props = defineProps({
     code: Number,
     message: String
 });
 </script>
-    
+
 <template>
-    <ShopLayout>
+    <MainLayout>
         <Head title="Error" />
 
         <div class="max-w-sm mx-auto">
@@ -16,5 +16,5 @@ const props = defineProps({
                 <p class="text-red-500 text-sm">{{ code }} | {{ message }}</p>
             </div>
         </div>
-    </ShopLayout>
+    </MainLayout>
 </template>

@@ -35,25 +35,8 @@ class User extends Authenticatable
     public function cart()
     {
         return $this->belongsToMany(Product::class, 'carts')
-            ->withPivot(['quantity', 'saved_for_later'])
+            ->withPivot(['quantity'])
             ->withTimestamps()
             ->using(Cart::class);
-    }
-
-    public function whishlist()
-    {
-        return $this->belongsToMany(Product::class, 'whishlists')
-            ->withTimestamps()
-            ->using(Whishlist::class);
-    }
-
-    public function orders()
-    {
-        return $this->hasMany(Order::class);
-    }
-
-    public function payments()
-    {
-        return $this->hasMany(Payment::class);
     }
 }
